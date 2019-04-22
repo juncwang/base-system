@@ -428,8 +428,8 @@ router.get('/selectPageData/:status/:page/:size', (req, res) => {
                     }else{
                         let data = {
                             msg: '查询成功',
-                            auths: auths,
-                            conut: auths.length
+                            auths: [],
+                            conut: 0
                         }
                         res.json(data)
                     }
