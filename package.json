@@ -1,0 +1,21 @@
+{
+  "name": "base-system",
+  "version": "1.0.0",
+  "description": "BaseSystem",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "author": "JuncWang",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "connect-multiparty": "^2.2.0",
+    "express": "^4.16.4",
+    "gravatar": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mongoose": "^5.5.0"
+  }
+}
