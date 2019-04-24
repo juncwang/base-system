@@ -117,7 +117,7 @@ router.post('/add/:id', (req, res) => {
             console.log(err)
             res.status(401).json(data)
         } else {
-            Users.findOne({ email: req.body.email })
+            User.findOne({ email: req.body.email })
                 .then(user => {
                     if (user) {
                         let data = {
@@ -129,7 +129,7 @@ router.post('/add/:id', (req, res) => {
                             .then(auth => {
                                 if (auth) {
                                     let headerImg = gravatar.url(req.body.email, { s: '200', r: 'pg', d: 'mm' })
-                                    userTmp = new Users({
+                                    userTmp = new User({
                                         username: req.body.username,
                                         email: req.body.email,
                                         password: md5(req.body.password),
