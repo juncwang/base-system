@@ -19,7 +19,7 @@ router.post('/updataHeadImg', multipartyMiddeware, (req, res) => {
         res.status(400).json(data)
     } else {
 
-        let filesData = req.files.file.path.split('\\')
+        let filesData = req.files.file.path.split('/')
         let fileName = filesData[filesData.length - 1]
 
         // req.files.file.path 文件路径 可以使用文件流进行调整
@@ -31,7 +31,7 @@ router.post('/updataHeadImg', multipartyMiddeware, (req, res) => {
             fs.unlinkSync(req.files.file.path)
             let data = {
                 msg: '文件保存成功',
-                url: 'http://192.168.78.113:5000/api/transfer/img/' + fileName
+                url: 'http://192.168.78.121:5000/api/transfer/img/' + fileName
             }
 
             User.findOne({ _id: req.body.userId })
